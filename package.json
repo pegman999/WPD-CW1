@@ -1,0 +1,29 @@
+{
+  "name": "exercise-planner-cw1",
+  "version": "1.0.0",
+  "description": "Weekly exercise planner",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js -e html,css,js,jpg,png,scss,mustache "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pegman999/Exercise-Planner-CW1.git"
+  },
+  "author": "Jack Hart",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pegman999/Exercise-Planner-CW1/issues"
+  },
+  "homepage": "https://github.com/pegman999/Exercise-Planner-CW1#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mustache-express": "^1.3.0",
+    "nedb": "^1.8.0",
+    "nodemon": "^2.0.7",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {}
+}

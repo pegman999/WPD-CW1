@@ -1,0 +1,9 @@
+{"student":"Peter","age":20,"programme":"Computing","grant":false,"modules":[{"name":"Programming","grade":65},{"name":"Databases","grade":70}],"_id":"Luf3zwmciHDPTmlX"}
+{"student":"Peter","age":20,"programme":"Computing","grant":false,"modules":[{"name":"Programming","grade":65},{"name":"Databases","grade":70}],"_id":"Q8qRd6BbFNar3YB1"}
+{"student":"Ann","age":21,"programme":"Networking","grant":true,"modules":[{"name":"Routing","grade":70},{"name":"Security","grade":61},{"name":"Server Management","grade":62}],"_id":"nZj5MTjK7zgth4q4"}
+{"student":"Peter","age":20,"programme":"Computing","grant":false,"modules":[{"name":"Programming","grade":65},{"name":"Databases","grade":70}],"_id":"oxbslurCoMZrMXvB"}
+{"student":"Ann","age":21,"programme":"Networking","grant":true,"modules":[{"name":"Routing","grade":70},{"name":"Security","grade":61},{"name":"Server Management","grade":62}],"_id":"rrwDSDstA52xAUQx"}
+{"student":"Ann","age":21,"programme":"Networking","grant":true,"modules":[{"name":"Routing","grade":70},{"name":"Security","grade":61},{"name":"Server Management","grade":62}],"_id":"ubNStOyoFaYK9e5H"}
+{"student":"Peter","age":20,"programme":"Computing","grant":false,"modules":[{"name":"Programming","grade":65},{"name":"Databases","grade":70}],"_id":"YWRrPjpWYrAM0HQw"}
+{"student":"Ann","age":21,"programme":"Networking","grant":true,"modules":[{"name":"Routing","grade":70},{"name":"Security","grade":61},{"name":"Server Management","grade":62}],"_id":"TkIieCrS9AcyTZHu"}
+{"$$deleted":true,"_id":"Luf3zwmciHDPTmlX"}

@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+{{>header}}
+</head>
+<body class="container">
+<h2>Add a Fitness Goal</h2>
+<form method="post" role="form">
+ <div class="form-group">
+    <label for="author">Name</label>
+    <input type="text" class="form-control" id="author"
+    name="author" placeholder="Written by" required>
+ </div>
+ <div class="form-group">
+    <label for="goal">Goal</label>
+    <input type="text" class="form-control" id="goal"
+    name="goal" placeholder="Add a Goal"
+required>
+ </div>
+ <div class="form-group">
+    <label for="goalDetail">Goal Details</label>
+    <textarea class="form-control" id="goalDetail" name="goalDetail"
+    placeholder="Enter details about the Goal" rows="3"
+required>
+</textarea>
+ </div>
+ <div class="form-group">
+    <input type="submit" value="Add Goal" class="btn btn-primary">
+ </div>
+</form>
+</body>
+
+</html>
