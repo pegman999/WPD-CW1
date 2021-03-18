@@ -22,13 +22,6 @@ exports.entries_list = function(req, res) {
     })
     };
 
-//Controller that displays the entries specifically to the author "Jack"
-exports.jacks_entries = function(req, res){
-    res.send('<h1>Processing Jack\'s entries </h1>');
-    db.getJackEntries('Jack').then((entries)=>{
-        console.log('jack_entries uses Jack messages');
-    });
-}
 
 
 //Controller use to display the title and new entries
@@ -45,9 +38,9 @@ exports.post_new_entry = function(req, res){
     res.redirect('/');
 }
 
-//Controller to remove an entry from database
-exports.remove_new_entry = function(req, res){
-    console.log('extracted data:', req.body.author, req.body.goal, req.body.goalDetail);
-    db.deleteEntry(req.body.author, req.body.goal, req.body.goalDetail)
-    res.redirect('/');
+//Controller which deletes entries and redirects back to the home page
+exports.remove_new_entry = async function(req, res) {
+    const id = req.params._id;
+    await db.deleteGoal(id);
+    res.redirect(req.baseUrl + '/');
 }

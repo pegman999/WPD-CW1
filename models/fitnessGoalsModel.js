@@ -39,21 +39,6 @@ class FitnessGoals {
             } 
 
 
-        //Gets all the entries 
-        getPetersEntries(){
-            return new Promise((resolve,reject)=> {
-                this.db.find({author: 'Peter'}, function(err, entries){
-                    if(err){
-                        reject(err);
-                        console.log('getPetersEntried promise rejected');
-                    }else {
-                        resolve(entries);
-                        console.log('getPetersEntried promise resolved');
-                    }
-                })
-            })
-        }
-
         //Used to add entries into the datbase and logs into console when used
         addEntry(auth, goals, goalDesc) {
             var entry = {
@@ -72,16 +57,23 @@ class FitnessGoals {
             })
             }
 
-        //Used to delete entries from the database
-        deleteEntry(author){
-            this.db.remove({author: 'Jack'}, {}, function(err, docsRem){
-                if (err){
-                    console.log('error deleting document Jack');
-                }else{
-                    console.log(docsRem, 'document(s) removed from the database');
-                }
+
+        //Used to get the ID of the goals that are in the database
+        getGoalById(id) {
+            return new Promise((resolve, reject) => {
+                this.db.findOne({ _id: id }, (err, entry) => {
+                    err ? reject(err) : resolve(entry)
+                })
             })
         }
+        
+        //Used to delete entries from the database
+        deleteGoal(id) {
+            this.db.remove({ _id: id }, { multi: false }, (err, numOfDocsRemoved) => {
+                err ? console.log('Problem with deleting goal: ${id}') : console.log('${numOfDocsRemoved} Goal removed from database')
+            })
+        }
+
                 
 } 
 module.exports = FitnessGoals; 

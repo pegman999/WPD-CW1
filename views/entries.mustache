@@ -10,13 +10,13 @@
 <body>
     <h1>{{title}}</h1>
     {{#entries}}
-    <div>{{author}}</div>
-        <div>{{goal}}</div>
-        <div>{{goalDetail}}</div>
-        <button><a href="/delete">Remove Goal</a></button>
-        <script>
+    <div>Author:&nbsp;	{{author}}</div>
+        <div>Task:&nbsp;	{{goal}}</div>
+        <div>Details:&nbsp;	{{goalDetail}}</div>
+        
+        {{! Link to the remove page based of the id on the page }}
+        <div><a href="/remove/{{_id}}">Remove</a></div>
 
-        </script>
         <hr>        
         {{/entries}}
 
