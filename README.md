@@ -3,7 +3,7 @@
 A web-based weekly planner that allows students to keep track of their weekly exercise goals and achievements.
 This was built using a combination of Node, Express and Mustache and using a nedb database
 
-##Run
+## Run
 
 To run the Weekly Exercise Planner follow these steps:
 
