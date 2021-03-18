@@ -54,6 +54,7 @@ class FitnessGoals {
             })
         }
 
+        //Used to add entries into the datbase and logs into console when used
         addEntry(auth, goals, goalDesc) {
             var entry = {
             author: auth,
@@ -71,7 +72,8 @@ class FitnessGoals {
             })
             }
 
-        deleteEntry(_id){
+        //Used to delete entries from the database
+        deleteEntry(author){
             this.db.remove({author: 'Jack'}, {}, function(err, docsRem){
                 if (err){
                     console.log('error deleting document Jack');

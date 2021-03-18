@@ -44,3 +44,10 @@ exports.post_new_entry = function(req, res){
     db.addEntry(req.body.author, req.body.goal, req.body.goalDetail)
     res.redirect('/');
 }
+
+//Controller to remove an entry from database
+exports.remove_new_entry = function(req, res){
+    console.log('extracted data:', req.body.author, req.body.goal, req.body.goalDetail);
+    db.deleteEntry(req.body.author, req.body.goal, req.body.goalDetail)
+    res.redirect('/');
+}

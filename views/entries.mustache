@@ -5,13 +5,15 @@
     {{>header}}
 </head>
 
+{{! main body of the display entries page
+    which displays the author, goal and goalDetails }}
 <body>
     <h1>{{title}}</h1>
     {{#entries}}
     <div>{{author}}</div>
         <div>{{goal}}</div>
         <div>{{goalDetail}}</div>
-        <button class="btn btn-primary" onclick="deleteEntry({{id}})">Delete this goal</button>
+        <button><a href="/delete">Remove Goal</a></button>
         <script>
 
         </script>
@@ -21,6 +23,6 @@
 
 </body>
 </html>
-
+{{! Button that directs you to the add a goal page }}
 <button><a href="/new">Add a Fitness Goal</a></button>
 
