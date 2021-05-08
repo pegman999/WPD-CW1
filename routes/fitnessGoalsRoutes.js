@@ -22,5 +22,10 @@ router.get('/about', function(req, res) {
  res.redirect('/about.html');
 })
 
+//Route to show an updated entry
+router.get('/update/:_id', controller.show_updated_entry);
+
+//Route to post the updated entries
+router.post('/update/:_id', controller.post_updated_entry);
 
 module.exports = router;

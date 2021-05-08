@@ -44,3 +44,18 @@ exports.remove_new_entry = async function(req, res) {
     await db.deleteGoal(id);
     res.redirect(req.baseUrl + '/');
 }
+
+
+//Controller which shows the updated entries
+exports.show_updated_entry = function(req, res){
+    res.render("update", {
+        'title': 'Update Entry'
+    });
+}
+
+//Controller which updates the entries
+exports.post_updated_entry= function(req, res){
+    console.log('id in update entry', req.params.id);
+    db.updateEntry(req.params.id, req.body.name, req.body.goal, req.body.duration, req.body.date, req.body.completed);
+    res.redirect('/');
+}

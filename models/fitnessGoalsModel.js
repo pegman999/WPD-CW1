@@ -74,6 +74,23 @@ class FitnessGoals {
             })
         }
 
+
+        updateEntry(id, name, goal, duration, date, completed){
+            
+            this.db.update({_id: id}, {name: name,
+                                        goal: goal,
+                                        duration: duration,
+                                        date: new Date().toISOString().split('T')[0],
+                                    completed: completed}, {}, function(err, goalUpdate){
+                                        if(err) {
+                                            console.log('error updating goal', goalUpdate);
+                                        } else {
+                                            console.log('goal updated in database');
+                                        }
+                                        
+                                    })
+        }
+
                 
 } 
 module.exports = FitnessGoals; 
