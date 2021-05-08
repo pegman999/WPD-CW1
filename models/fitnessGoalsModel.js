@@ -11,25 +11,14 @@ class FitnessGoals {
         }
         } 
 
-        //Used to initalize the database with its variables
-        // init() {
-        //     this.db.insert({
-        //     goal: 'Go for a Run',
-        //     goalDetail: 'Go for a run for an hour',
-        //     published: '2020-02-16',
-        //     author: 'Jack'
-        //     });
-        //     //for later debugging
-        //     console.log('db entry Jack inserted');
-        //     }
 
-        //Gets all the entries in the datbase and displays to the console
+        // Gets all the entries in the datbase and displays to the console
         getAllEntries() {
             return new Promise((resolve, reject) => {
             this.db.find({}, function(err, entries) {
             if (err) {
             reject(err);
-            console.log('getAllEntried promise rejected');
+            console.log('getAllEntries promise rejected');
             } else {
             resolve(entries);
             console.log('getAllEntries returns:');
@@ -37,7 +26,34 @@ class FitnessGoals {
             })
             })
             } 
+        
+        getFinishedEntries() {
+            return new Promise((resolve, reject) => {
+            this.db.find({completed: 'Achieved'}, function(err, entries) {
+            if (err) {
+            reject(err);
+            console.log('getFinishedEntries promise rejected');
+            } else {
+            resolve(entries);
+            console.log('getFinishedEntries returns:');
+            }
+            })
+            })
+            }
 
+        getUncompleteEntries() {
+            return new Promise((resolve, reject) => {
+            this.db.find({completed: 'Not achieved'}, function(err, entries) {
+            if (err) {
+            reject(err);
+            console.log('getUncompleteEntries promise rejected');
+            } else {
+            resolve(entries);
+            console.log('getUncompleteEntries returns:');
+            }
+            })
+            })
+            }
 
         //Used to add entries into the datbase and logs into console when used
         addEntry(name, goals, date, duration, completed) {

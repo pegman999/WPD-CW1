@@ -28,4 +28,10 @@ router.get('/update/:id', controller.show_updated_entry);
 //Route to post the updated entries
 router.post('/update/:id', controller.post_updated_entry);
 
+//Route to go to complete goals
+router.get('/finished', controller.finished_page);
+
+//Route to go to uncomplete goals
+router.get('/uncomplete', controller.uncomplete_page);
+
 module.exports = router;

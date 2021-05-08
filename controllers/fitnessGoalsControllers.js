@@ -59,3 +59,29 @@ exports.post_updated_entry= function(req, res){
     db.updateEntry(req.params.id, req.body.name, req.body.goals, req.body.date, req.body.duration, req.body.completed);
     res.redirect('/');
 }
+
+//Controller to show the finished goals
+exports.finished_page = function(req, res) {
+    db.getFinishedEntries().then((list) => {
+        res.render('finished', {
+            'title': 'Fitness Goals',
+            'entries': list
+        })
+        console.log('fitnessGoals_finished uses all messages');
+        console.log(list);
+    }).catch((err)=>{
+        console.log('promise rejcted', err)
+    })}
+
+//Controller to show the uncomplete goals
+exports.uncomplete_page = function(req, res) {
+    db.getUncompleteEntries().then((list) => {
+        res.render('uncomplete', {
+            'title': 'Fitness Goals',
+            'entries': list
+        })
+        console.log('fitnessGoals_uncomplete uses all messages');
+        console.log(list);
+    }).catch((err)=>{
+        console.log('promise rejcted', err)
+    })}
