@@ -8,48 +8,56 @@
 <h2>Update Entry</h2>
 
 <form method="post" role="form">
+
 <div class="form-group">
 <label for="name">Name:</label>
-<input type="text" class="form-control" id="name"
-name="name" value={{name}} placeholder="Name" required>
+<input type="text" class="form-control" id="name" name="name" value='{{author}}' placeholder="Enter Author" required>
 </div>
+
 <br>
+
 <div class="form-group">
-<label for="goal">Goal:</label>
-<textarea class="form-control" id="goal" name="goal"
-placeholder="Enter a description of your goal" rows="3"
-required>
+<label for="goals">Goal:</label>
+<textarea class="form-control" id="goal" name="goal" placeholder="Enter a description of your goal" rows="3" required>
 </textarea>
 </div>
+
 <br>
+
 <div class="form-group">
 <label for="duration">Duration: </label>
-<input type="text" class="form-control" id="duration"
-name="duration" placeholder="Duration" required>
+<input type="text" class="form-control" id="duration" name="duration" placeholder="Duration" required>
 </div>
+
 <br>
+
 <div class="form-group">
 <label for="date">Date: </label>
-<input type="date" class="form-control" id="date"
-name="date" required>
+<input type="date" class="form-control" id="date" name="date" required>
 </div>
+
 <br>
+
 <div class="form-group">
-<label for="Completed">Completed: </label>
+<label for="completed">Completed: </label>
 <br>
-<label for="true">True</label>
-<input type="radio" id="true" name="completed" value=true><br>
-<label for="false">False</label>
-<input type="radio" id="false" name="completed" value=false><br>
+<label for="true">Yes</label>
+<input type="radio" id="yes" name="completed" value=true><br>
+<label for="false">No</label>
+<input type="radio" id="no" name="completed" value=false><br>
 
 </div>
+
 <br>
+
 <div class="form-group">
 <input type="reset" value="Reset" class="btn btn-primary">
 </div>
+
 <div class="form-group">
 <input type="submit" value="Submit" class="btn btn primary">
 </div>
+
 </form>
     
 </body>

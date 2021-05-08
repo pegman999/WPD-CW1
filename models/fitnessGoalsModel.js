@@ -12,16 +12,16 @@ class FitnessGoals {
         } 
 
         //Used to initalize the database with its variables
-        init() {
-            this.db.insert({
-            goal: 'Go for a Run',
-            goalDetail: 'Go for a run for an hour',
-            published: '2020-02-16',
-            author: 'Jack'
-            });
-            //for later debugging
-            console.log('db entry Jack inserted');
-            }
+        // init() {
+        //     this.db.insert({
+        //     goal: 'Go for a Run',
+        //     goalDetail: 'Go for a run for an hour',
+        //     published: '2020-02-16',
+        //     author: 'Jack'
+        //     });
+        //     //for later debugging
+        //     console.log('db entry Jack inserted');
+        //     }
 
         //Gets all the entries in the datbase and displays to the console
         getAllEntries() {
@@ -40,11 +40,13 @@ class FitnessGoals {
 
 
         //Used to add entries into the datbase and logs into console when used
-        addEntry(auth, goals, goalDesc) {
+        addEntry(name, goals, date, duration, completed) {
             var entry = {
-            author: auth,
-            goal: goals,
-            goalDetail: goalDesc,
+            name: name,
+            goals: goals,
+            date: date,
+            duration: duration,
+            completed: completed,
             published: new Date().toISOString().split('T')[0]
             }
             console.log('entry created', entry);
@@ -75,17 +77,13 @@ class FitnessGoals {
         }
 
 
-        updateEntry(id, name, goal, duration, date, completed){
+        updateEntry(id, name, goals, date, duration, completed){
             
-            this.db.update({_id: id}, {name: name,
-                                        goal: goal,
-                                        duration: duration,
-                                        date: new Date().toISOString().split('T')[0],
-                                    completed: completed}, {}, function(err, goalUpdate){
+            this.db.update({_id: id}, {name: name, goals: goals, date: date, duration: duration, completed: completed, published: new Date().toISOString().split('T')[0],}, {}, function(err, goalUpdate){
                                         if(err) {
-                                            console.log('error updating goal', goalUpdate);
+                                            console.log('error with updating goal', goalUpdate);
                                         } else {
-                                            console.log('goal updated in database');
+                                            console.log('goal updated');
                                         }
                                         
                                     })

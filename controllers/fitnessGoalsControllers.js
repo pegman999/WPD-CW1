@@ -1,5 +1,5 @@
 const fitnessGoalsDAO = require('../models/fitnessGoalsModel'); 
-const db = new fitnessGoalsDAO(); 
+const db = new fitnessGoalsDAO('goals.db'); 
 
 //Controller for inital page of site (Take all entries from model page and displays to console)
 exports.landing_page = function(req, res) {
@@ -33,8 +33,8 @@ exports.show_new_entries = function(req, res){
 
 //Controller which extracts data from input and adds to database then redirects to the home page with new data
 exports.post_new_entry = function(req, res){
-    console.log('extracted data:', req.body.author, req.body.goal, req.body.goalDetail);
-    db.addEntry(req.body.author, req.body.goal, req.body.goalDetail)
+    console.log('extracted data:', req.body.name, req.body.goals, req.body.date, req.body.duration, req.body.completed);
+    db.addEntry(req.body.name, req.body.goals, req.body.date, req.body.duration, req.body.completed)
     res.redirect('/');
 }
 
@@ -48,7 +48,7 @@ exports.remove_new_entry = async function(req, res) {
 
 //Controller which shows the updated entries
 exports.show_updated_entry = function(req, res){
-    res.render("update", {
+    res.render('update', {
         'title': 'Update Entry'
     });
 }
@@ -56,6 +56,6 @@ exports.show_updated_entry = function(req, res){
 //Controller which updates the entries
 exports.post_updated_entry= function(req, res){
     console.log('id in update entry', req.params.id);
-    db.updateEntry(req.params.id, req.body.name, req.body.goal, req.body.duration, req.body.date, req.body.completed);
+    db.updateEntry(req.params.id, req.body.name, req.body.goals, req.body.date, req.body.duration, req.body.completed);
     res.redirect('/');
 }

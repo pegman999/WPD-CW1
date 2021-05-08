@@ -23,9 +23,9 @@ router.get('/about', function(req, res) {
 })
 
 //Route to show an updated entry
-router.get('/update/:_id', controller.show_updated_entry);
+router.get('/update/:id', controller.show_updated_entry);
 
 //Route to post the updated entries
-router.post('/update/:_id', controller.post_updated_entry);
+router.post('/update/:id', controller.post_updated_entry);
 
 module.exports = router;
