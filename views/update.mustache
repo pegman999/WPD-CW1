@@ -11,15 +11,14 @@
 
 <div class="form-group">
 <label for="name">Name:</label>
-<input type="text" class="form-control" id="name" name="name" value="{{author}}" placeholder="Enter Author" required>
+<input type="text" class="form-control" id="name" name="name" value="{{name}}" placeholder="Enter Author" required>
 </div>
 
 <br>
 
 <div class="form-group">
 <label for="goals">Goal:</label>
-<textarea class="form-control" id="goal" name="goal" placeholder="Enter a description of your goal" rows="3" required>
-</textarea>
+<input type="text" class="form-control" id="goals" name="goals" value="{{goals}}" placeholder="Enter Goal" required>
 </div>
 
 <br>
@@ -33,7 +32,7 @@
 
 <div class="form-group">
 <label for="duration">Duration: </label>
-<input type="text" class="form-control" id="duration" name="duration" placeholder="Duration" required>
+<input type="text" class="form-control" id="duration" name="duration" value="{{duration}}" placeholder="Duration" required>
 </div>
 
 
@@ -43,9 +42,9 @@
 <label for="completed">Completed: </label>
 <br>
 <label for="true">Yes</label>
-<input type="radio" id="yes" name="completed" value=true><br>
+<input type="radio" id="yes" name="completed" value=Achieved><br>
 <label for="false">No</label>
-<input type="radio" id="no" name="completed" value=false><br>
+<input type="radio" id="no" name="completed" value="Not achieved"><br>
 
 </div>
 
@@ -58,6 +57,7 @@
 <div class="form-group">
 <input type="submit" value="Submit" class="btn btn primary">
 </div>
+
 
 </form>
     

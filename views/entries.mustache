@@ -3,26 +3,106 @@
 
 <head>
     {{>header}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.btn {
+  background-color: DodgerBlue;
+  border: none;
+  color: white;
+  padding: 12px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: RoyalBlue;
+}
+
+body {
+  font-size: 28px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+
+.header{
+    font-size: 50px;
+}
+
+</style>
 </head>
 
 {{! main body of the display entries page
     which displays the author, goal and goalDetails }}
 <body>
-        <h1>{{title}}</h1>
+    
+    <div class="header">
+    {{title}}
+    </div>
+    
+    <ul>
+        <li><a class="active" href="/goalspage">Goals</a></li>
+        <li><a href="/register">Register</a></li>
+    </ul>
+
     
     <table>
         <thead>
             <tr>
-                <th><a href="/">All Goals</a></th>
+                <th><a href="/goalspage">All Goals</a></th>
                 <th><a href="/finished">Finished Goals</a></th>
                 <th><a href="/uncomplete">Uncomplete Goals</a></th>
             </tr>
         </thead>
     </table>
 
-          {{#entries}}
+          
     <table>
-    <thead>
         <tr>
             <th colspan="2">Name:&nbsp;</th>
             <th colspan="2">Goals:&nbsp;</th>
@@ -33,21 +113,20 @@
             <th colspan="2">Edit:&nbsp;</th>
             <th colspan="2">Delete:&nbsp;</th>
         </tr>
-    </thead>
-    <tbody>
+    {{#entries}}
         <tr>
-            <td>{{name}}</td>
-            <td>{{goals}}</td> 
-            <td>{{date}}</td>    
-            <td>{{duration}}</td>
-            <td>{{completed}}</td>
-            <td>{{published}}</td>
-            <td><a href="/remove/{{_id}}">Remove</a></td>
-            <td><a href="/update/{{_id}}">Update</a></td>
+            <td colspan="2">{{name}}</td>
+            <td colspan="2">{{goals}}</td> 
+            <td colspan="2">{{date}}</td>    
+            <td colspan="2">{{duration}}</td>
+            <td colspan="2">{{completed}}</td>
+            <td colspan="2">{{published}}</td>
+            <td colspan="2"><a href="/update/{{_id}}"><button class="btn"><i class="fa fa-edit"></i></button></a></td>
+            <td colspan="2"><a href="/remove/{{_id}}"><button class="btn"><i class="fa fa-close"></i></button></a></td>
         </tr>
-    </tbody>
+            {{/entries}}
     </table>
-    {{/entries}}
+
 
 <br>
 
