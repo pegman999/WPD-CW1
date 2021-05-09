@@ -34,13 +34,81 @@ tr:nth-child(even) {
 .btn:hover {
   background-color: RoyalBlue;
 }
+
+body {
+  font-size: 28px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+
+.header{
+    font-size: 50px;
+}
+
 </style>
 </head>
 
 {{! main body of the display entries page
     which displays the author, goal and goalDetails }}
 <body>
-        <h1>{{title}}</h1>
+    
+    <div class="header">
+    {{title}}
+    </div>
+    
+
+    
+ <div class="text-left" style="margin-bottom: 1em;">
+  <a id="home" href="/" class="btn btn-primary">
+ Home
+ </a>
+  <a id="goalspage" href="/goalspage" class="btn btn-primary">
+ Goals
+ </a>
+ {{^user}}
+ <a id="login" href="/login" class="btn btn-primary">
+ Sign in
+ </a>
+ <a id="register" href="/register" class="btn btn-primary">
+ Register
+ </a>
+ {{/user}}
+ {{#user}}
+ <a class="text-right" id="logout" href="/logout" class="btn btn-primary">
+ Sign out
+ </a>
+ {{/user}}
+ </div>
+
     
     <table>
         <thead>

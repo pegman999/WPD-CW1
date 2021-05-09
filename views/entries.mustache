@@ -85,10 +85,29 @@ li a:hover {
     {{title}}
     </div>
     
-    <ul>
-        <li><a class="active" href="/goalspage">Goals</a></li>
-        <li><a href="/register">Register</a></li>
-    </ul>
+
+    
+ <div class="text-left" style="margin-bottom: 1em;">
+  <a id="home" href="/" class="btn btn-primary">
+ Home
+ </a>
+  <a id="goalspage" href="/goalspage" class="btn btn-primary">
+ Goals
+ </a>
+ {{^user}}
+ <a id="login" href="/login" class="btn btn-primary">
+ Sign in
+ </a>
+ <a id="register" href="/register" class="btn btn-primary">
+ Register
+ </a>
+ {{/user}}
+ {{#user}}
+ <a class="text-right" id="logout" href="/logout" class="btn btn-primary">
+ Sign out
+ </a>
+ {{/user}}
+ </div>
 
     
     <table>

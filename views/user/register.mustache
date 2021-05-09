@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-{{>header}}
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-
+    {{>header}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
@@ -73,13 +71,9 @@ li a:hover {
 .header{
     font-size: 50px;
 }
+
 </style>
 </head>
-<body>
-
-<div class="header">
-  {{title}}
-</div>
 
  <div class="text-left" style="margin-bottom: 1em;">
   <a id="home" href="/" class="btn btn-primary">
@@ -103,29 +97,25 @@ li a:hover {
  {{/user}}
  </div>
 
+<body class="container">
+<h1>{{1tle}}</h1>
+<h2>New User Registration</h2>
 
-        <div id="goalspage">
-            
-            <h2><a href='/goalspage'>Track your goals!</a></h2>
-            <p>The goal of the website is to allow you to track fitness goals.</p>
-            <p>You are given the ablity to add to your list and fill in the details of the goal.</p>
-            <p>From the list you can update and delete already existing entries and also add the week it is due.</p>
-         </div>
-
-        <div id="login">
-            <h2><a href='/login'>Login Page</a></h2>
-            <p>This is a simple login system that allows you to put in a username and a password.</p>
-            <p>Once registered its as simple as putting in your details to view your goals.</p>
-            <p>To add, edit and delete your goals it is required to be logged in.</p>
-            </div>
-
-        <div id="register">
-            <h2><a href='/register'>Register Page</a></h2>
-            <p>This is a simple register system that requires you to create a username and password that</p>
-            <p>doesn't already exist.</p>
-            <p>Once registered you will be re-directed to the login page.</p>
-            </div>
-
-
+<form method="post" role="/register">
+ <div class="form-group">
+{{user-name-error}}
+ <label for="username">User Name</label>
+ <input type="text" class="form-control" id="username"
+ name="username" placeholder="Enter user name" required>
+ </div>
+ <div class="form-group">
+ <label for="password">Password (8 characters minimum)</label>
+ <input type="password" class="form-control" id="pass"
+name="pass" placeholder="Enter password" minlength="8" required> 
+</div>
+ <div class="form-group">
+ <input type="submit" value="Register" class="btn btn-primary">
+ </div>
+</form>
 </body>
 </html>
