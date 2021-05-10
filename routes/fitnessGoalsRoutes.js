@@ -68,12 +68,12 @@ router.use(function(req, res) {
    
 
 
-// //Route to port 500 to show an internal server error
-// router.use(function(err, req, res, next) {
-//     res.status(500);
-//     res.type('text/plain');
-//     res.send('Internal Server Error.');
-//     })
+//Route to port 500 to show an internal server error
+router.use(function(err, req, res, next) {
+    res.status(500);
+    res.type('text/plain');
+    res.send('Internal Server Error.');
+    })
     
 
 module.exports = router;
